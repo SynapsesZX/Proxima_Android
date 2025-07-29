@@ -7,7 +7,7 @@ export const config: WebdriverIO.Config = {
   runner: 'local',
   tsConfigPath: './tsconfig.json',
 
-  hostname: '172.16.0.2',
+  hostname: '192.168.0.100',
   port: 4723,
   path: '/',
 

@@ -6,14 +6,14 @@ export default class BasePage {
    */
   public async clickElement(locator: string, timeout = 10000): Promise<void> {
     try {
-      const element = $(locator);
+      const element = await $(locator); // <- обязательно await
       await element.waitForDisplayed({ timeout });
+      await element.waitForEnabled({ timeout });
       await element.click();
-    } catch (error) {
-      throw new Error(`Cannot click element: ${locator}. Error: ${error}`);
+    } catch (error: any) {
+      throw new Error(`Cannot click element: ${locator}. Error: ${error.message}`);
     }
   }
-
   /**
    * Enters data into an input field
    */

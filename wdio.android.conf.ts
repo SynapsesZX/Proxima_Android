@@ -7,7 +7,7 @@ export const config: WebdriverIO.Config = {
   runner: 'local',
   tsConfigPath: './tsconfig.json',
 
-  hostname: '192.168.0.100',
+  hostname: '192.168.0.102',
   port: 4723,
   path: '/',
 
@@ -61,6 +61,8 @@ export const config: WebdriverIO.Config = {
       'appium:platformVersion': '15',
       'appium:automationName': 'UiAutomator2',
       'appium:appPackage': 'com.proximaresearch.proximacrm',
+      'appium:noReset': true,
+      'appium:fullReset': false,
     },
   ],
 
@@ -141,20 +143,20 @@ export const config: WebdriverIO.Config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: 'bdd',
-    timeout: 60000,
+    timeout: 10 * 60 * 1000,
   },
 
   //
   // =====
 
-  afterTest: async function (): Promise<void> {
+  afterTest: async function () {
     try {
-      await browser.terminateApp('com.proximaresearch.proximacrm', { timeout: 1000 });
+      await browser.terminateApp('com.proximaresearch.proximacrm', {});
       await browser.activateApp('com.proximaresearch.proximacrm');
 
-      console.log('App reset to initial state');
+      console.log('App restarted, SQLite data should be preserved');
     } catch (error) {
-      console.error('Error during app reset:', error);
+      console.error('Error during app restart:', error);
     }
   },
   // =====

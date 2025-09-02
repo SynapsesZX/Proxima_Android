@@ -59,6 +59,10 @@ export const config: WebdriverIO.Config = {
       'appium:platformVersion': '15',
       'appium:automationName': 'UiAutomator2',
       'appium:appPackage': 'com.proximaresearch.proximacrm',
+      'appium:noReset': true,
+      'appium:fullReset': false,
+      'appium:autoGrantPermissions': true,
+      'appium:autoDismissAlerts': true,
     },
   ],
 

@@ -7,7 +7,7 @@ export const config: WebdriverIO.Config = {
   runner: 'local',
   tsConfigPath: './tsconfig.json',
 
-  hostname: '192.168.0.102',
+  hostname: '192.168.0.101',
   port: 4723,
   path: '/',
 
@@ -63,6 +63,8 @@ export const config: WebdriverIO.Config = {
       'appium:appPackage': 'com.proximaresearch.proximacrm',
       'appium:noReset': true,
       'appium:fullReset': false,
+      'appium:autoGrantPermissions': true,
+      'appium:autoDismissAlerts': true,
     },
   ],
 
@@ -149,10 +151,19 @@ export const config: WebdriverIO.Config = {
   //
   // =====
 
+  beforeTest: async function () {
+    try {
+      await browser.pause(1000);
+      await browser.activateApp('com.proximaresearch.proximacrm');
+
+      console.log('App restarted, SQLite data should be preserved');
+    } catch (error) {
+      console.error('Error during app restart:', error);
+    }
+  },
   afterTest: async function () {
     try {
       await browser.terminateApp('com.proximaresearch.proximacrm', {});
-      await browser.activateApp('com.proximaresearch.proximacrm');
 
       console.log('App restarted, SQLite data should be preserved');
     } catch (error) {

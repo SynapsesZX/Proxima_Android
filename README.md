@@ -10,11 +10,15 @@
    capabilities: [
    {
    // capabilities for local Appium web tests on an Android Emulator
-   platformName: 'Android', -> Твоя версія платформи
-   'appium:deviceName': 'R52Y4034AGP', -> Твій Device Name, ти зможеш отримати його через термінал команду adb devices ( як це зробити я опишу нижче )
-   'appium:platformVersion': '15', -> Версія твого Android
-   'appium:automationName': 'UiAutomator2', -> це Engine автоматизації
-   'appium:appPackage': 'com.proximaresearch.proximacrm', -> назва апки яка буде запускатись при автоматизації ( як це отримати я опишу нижче )
+   platformName: 'Android',
+   'appium:deviceName': 'R52Y4034AGP',
+   'appium:platformVersion': '15',
+   'appium:automationName': 'UiAutomator2',
+   'appium:appPackage': 'com.proximaresearch.proximacrm',
+   'appium:noReset': true,
+   'appium:fullReset': false,
+   'appium:autoGrantPermissions': true,
+   'appium:autoDismissAlerts': true,
    },
    ],
 
@@ -44,3 +48,10 @@
 2. Відкрити Appium Inspector та налаштувати Capability Builder наприклад ![alt text](image-1.png). Дивись Пункт 5 ( !ВАЖЛИВО, щоб ранити тести саме на твоєму девайсі тобі все одно потрібно налаштовувати capabilities )
 3. Натиснути Start Session button
 4. Якщо все зроблено правильно то ти отримаєш скрін з proxima crm
+
+5. ВАЖЛИВО !!!
+   Перед раном автотестів після налаштувань вам потрібно зробити наступне.
+6. Встановити додаток с google play
+7. Залогуватись тестовим акком для авто ( запитуйте )
+8. Завантажити дані з БД
+9. Вимкнути всі нотіфікейшини та доступи до локації (вони будуть трігеритись після декількох запусків аплікації ) Головна мета це щоб коли ви почали ранити тести то ви знаходились на вкладці розклад без нотіфікашок.

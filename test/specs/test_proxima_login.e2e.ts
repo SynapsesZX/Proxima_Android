@@ -13,9 +13,15 @@ const login_locators = {
     alarmNavigateBack: '~Navigate up',
     dontAskGain:
       '//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_deny_and_dont_ask_again_button"]',
+    createTaskButton: '~Створити',
+    createNewVisitButton: '~Новий візит',
+    ustanovaEmpty: '~Установа*\nНе вказано',
+    ustanovaApteka:
+      '~121212\n, Аптека, Kirovogradska, Ємилівка, дорога ffff fff, -, company_id: 349686',
+    saveButton: '~Зберегти',
   },
 };
-
+/*
 describe('firstLaunchSetup', () => {
   const loginpage = new BasePageAndroid();
   const email = 'igorzyabrov2090@gmail.com';
@@ -97,6 +103,20 @@ describe('firstLaunchSetup', () => {
   });
 
   it('[@regression] Setup notifications and permissions step 3', async function () {
+    await browser.pause(3000);
+  });
+});
+*/
+
+describe('Smoke automation tests', () => {
+  const loginpage = new BasePageAndroid();
+
+  it('[@regression] Create the visit with valid data ( Planning )', async function () {
+    await loginpage.clickElement(login_locators.android.createTaskButton);
+    await loginpage.clickElement(login_locators.android.createNewVisitButton);
+    await loginpage.clickElement(login_locators.android.ustanovaEmpty);
+    await loginpage.clickElement(login_locators.android.ustanovaApteka);
+    await loginpage.clickElement(login_locators.android.saveButton);
     await browser.pause(3000);
   });
 });

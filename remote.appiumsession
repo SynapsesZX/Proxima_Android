@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "caps": [
+    {
+      "type": "text",
+      "name": "platformName",
+      "value": "Android"
+    },
+    {
+      "type": "text",
+      "name": "appium:automationName",
+      "value": "uiautomator2"
+    },
+    {
+      "type": "text",
+      "name": "appium:deviceName",
+      "value": "R52Y4034AGP"
+    },
+    {
+      "type": "text",
+      "name": "appium:platformVersion",
+      "value": "15"
+    },
+    {
+      "type": "text",
+      "name": "appium:appPackage",
+      "value": "com.proximaresearch.proximacrm"
+    },
+    {
+      "type": "text",
+      "name": "appium:noReset",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "name": "appium:fullReset",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "name": "appium:autoGrantPermissions",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "name": "appium:autoDismissAlerts",
+      "value": "true"
+    }
+  ],
+  "server": {
+    "local": {},
+    "remote": {},
+    "advanced": {},
+    "sauce": {
+      "dataCenter": "us-west-1"
+    },
+    "headspin": {},
+    "browserstack": {},
+    "lambdatest": {},
+    "testingbot": {},
+    "experitest": {},
+    "roboticmobi": {},
+    "remotetestkit": {},
+    "bitbar": {},
+    "kobiton": {},
+    "perfecto": {},
+    "pcloudy": {},
+    "mobitru": {},
+    "tvlabs": {},
+    "testcribe": {}
+  },
+  "serverType": "remote",
+  "visibleProviders": []
+}

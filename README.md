@@ -45,7 +45,7 @@
 Як налаштувати щоб Appium Inspector показував твою апку з селекторами
 
 1. В терміналі зробити команду appium
-2. Відкрити Appium Inspector та налаштувати Capability Builder наприклад ![alt text](image-1.png). Дивись Пункт 5 ( !ВАЖЛИВО, щоб ранити тести саме на твоєму девайсі тобі все одно потрібно налаштовувати capabilities )
+2. Відкрити Appium Inspector та добавити файл remote_appiumsession ( знаходиться в проекті )
 3. Натиснути Start Session button
 4. Якщо все зроблено правильно то ти отримаєш скрін з proxima crm
 
